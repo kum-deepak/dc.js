@@ -45,7 +45,7 @@ export class RemoteDataSource {
                 'Content-Type': 'application/json',
             },
             redirect: 'follow',
-            body: JSON.stringify(serializedFilters),
+            body: JSON.stringify({ filters: serializedFilters }),
         });
         const txtBody = await response.text();
         return JSON.parse(txtBody, dateTimeReviver);

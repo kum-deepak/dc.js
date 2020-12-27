@@ -13,7 +13,7 @@ const data = loadAndProcessData('src/ndx.csv');
 const adaptor = creatAdapter(data);
 
 app.post('/api/stock', (req, res) => {
-    adaptor.filterStorage.restore(req.body);
+    adaptor.filterStorage.restore(req.body.filters);
     console.log(`${adaptor.groupAll.value()} of ${adaptor.cf.size()}`);
     const result = adaptor.computeChartData();
     res.json(result);
