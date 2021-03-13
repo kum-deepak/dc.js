@@ -1,0 +1,675 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ChartGroup | dc</title>
+	<meta name="description" content="Documentation for dc">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">dc</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">Globals</a>
+				</li>
+				<li>
+					<a href="chartgroup.html">ChartGroup</a>
+				</li>
+			</ul>
+			<h1>Class ChartGroup</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A chart group often corresponds to a set of linked charts.
+							For example, when using crossfilter, it is typically charts linked to same crossfilter instance.
+							It specifies the set of charts which should be updated when a filter changes on one of the charts.
+							The <a href="basemixin.html"><code>BaseMixin</code></a> methods <a href="basemixin.html#rendergroup"><code>renderGroup</code></a> and
+							<a href="basemixin.html#redrawgroup"><code>redrawGroup</code></a> call <a href="chartgroup.html#renderall"><code>renderAll</code></a> and <a href="chartgroup.html#redrawall"><code>redrawAll</code></a>
+						on the chart group.</p>
+					</div>
+					<p><code>dc</code> charts created without specifying a chartGroup are registered with the default ChartGroup.
+					It is recommended that all <code>dc</code> charts are created with an explicit chartGroup.</p>
+					<p>This has been introduced in v5 to facilitate automated garage collection of charts.
+						SPAs (Single Page Applications), or any other environments where set of charts need to be unloaded,
+					should use explicit chartGroups.</p>
+					<p>It is possible to register non dc charts (or any other object) with the chartGroup.
+					Please see <a href="../interfaces/iminimalchart.html"><code>IMinimalChart</code></a> to understand the methods the chartGroup will be invoking.</p>
+					<p><code>dc</code> charts do not hard depend on this class. So, it is possible to replace it with any compliant
+					implementation. <a href="../interfaces/ichartgroup.html"><code>IChartGroup</code></a> specifies what rest of the <code>dc</code> expects.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ChartGroup</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/ichartgroup.html" class="tsd-signature-type">IChartGroup</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="chartgroup.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Intermediate Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="chartgroup.html#beforeredrawall" class="tsd-kind-icon">before<wbr>Redraw<wbr>All</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="chartgroup.html#beforerenderall" class="tsd-kind-icon">before<wbr>Render<wbr>All</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="chartgroup.html#renderlet" class="tsd-kind-icon">renderlet</a></li>
+							</ul>
+							<h3>Ninja Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="chartgroup.html#filterstorage" class="tsd-kind-icon">filter<wbr>Storage</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Standard Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#filterall" class="tsd-kind-icon">filter<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#redrawall" class="tsd-kind-icon">redraw<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#refocusall" class="tsd-kind-icon">refocus<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#renderall" class="tsd-kind-icon">render<wbr>All</a></li>
+							</ul>
+							<h3>Intermediate Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#deregister" class="tsd-kind-icon">deregister</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#has" class="tsd-kind-icon">has</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#list" class="tsd-kind-icon">list</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#register" class="tsd-kind-icon">register</a></li>
+							</ul>
+							<h3>Ninja Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="chartgroup.html#clear" class="tsd-kind-icon">clear</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Chart<wbr>Group<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="chartgroup.html" class="tsd-signature-type">ChartGroup</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L68">src/core/chart-group.ts:68</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a new instance. Please note it does not take a name as parameter.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="chartgroup.html" class="tsd-signature-type">ChartGroup</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Intermediate Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="beforeredrawall" class="tsd-anchor"></a>
+					<h3>before<wbr>Redraw<wbr>All</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Redraw<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#beforeredrawall">beforeRedrawAll</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L60">src/core/chart-group.ts:60</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This is an <code>async</code> callback.
+								It can be used for quite sophisticated purposes.
+								For example, the RemoteDataAdaptors can request data from a remote service based on
+							current filters and await till results are received.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p><a href="chartgroup.html#beforerenderall">beforeRenderAll</a></p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="beforerenderall" class="tsd-anchor"></a>
+					<h3>before<wbr>Render<wbr>All</h3>
+					<div class="tsd-signature tsd-kind-icon">before<wbr>Render<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#beforerenderall">beforeRenderAll</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L68">src/core/chart-group.ts:68</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Similar to <a href="chartgroup.html#beforeredrawall"><code>beforeRedrawAll</code></a>.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p><a href="chartgroup.html#beforeredrawall">beforeRedrawAll</a></p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="renderlet" class="tsd-anchor"></a>
+					<h3>renderlet</h3>
+					<div class="tsd-signature tsd-kind-icon">renderlet<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#renderlet">renderlet</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L49">src/core/chart-group.ts:49</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>This callback is invoked after <a href="chartgroup.html#redrawall"><code>redrawAll</code></a> and <a href="chartgroup.html#renderall"><code>renderAll</code></a>.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code><span style="color: #001080">chartGroup</span><span style="color: #000000">.</span><span style="color: #795E26">renderlet</span><span style="color: #000000"> = () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// user code</span>
+<span style="color: #000000">}</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Ninja Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="filterstorage" class="tsd-anchor"></a>
+					<h3>filter<wbr>Storage</h3>
+					<div class="tsd-signature tsd-kind-icon">filter<wbr>Storage<span class="tsd-signature-symbol">:</span> <a href="../interfaces/ifilterstorage.html" class="tsd-signature-type">IFilterStorage</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#filterstorage">filterStorage</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L35">src/core/chart-group.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>It stores filter state of charts.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Standard Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="filterall" class="tsd-anchor"></a>
+					<h3>filter<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#filterall">filterAll</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L183">src/core/chart-group.ts:183</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reset filters for all the charts. This can be used to implement <code>Reset All</code> in the UI.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="redrawall" class="tsd-anchor"></a>
+					<h3>redraw<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">redraw<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#redrawall">redrawAll</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L166">src/core/chart-group.ts:166</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Redraw all the charts.</p>
+								</div>
+								<p>When a filter is modified for any of the charts or there is a change in the underlying data,
+								all linked charts will need be redrawn.</p>
+								<p>It will do the following in order:</p>
+								<ul>
+									<li>invoke async callback <a href="chartgroup.html#beforeredrawall"><code>beforeRedrawAll</code></a>,</li>
+									<li>invoke <a href="basemixin.html#redraw"><code>redraw</code></a> on each of the charts,</li>
+									<li>invoke callback <a href="chartgroup.html#renderlet"><code>renderlet</code></a>.</li>
+								</ul>
+								<p>For any filter changes, this will be called by dc charts internally.
+									However, if there is a change in data (like rows getting added), this function
+								needs to be called to see the updated data.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="refocusall" class="tsd-anchor"></a>
+					<h3>refocus<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">refocus<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#refocusall">refocusAll</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L192">src/core/chart-group.ts:192</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Refocus all the charts that support focusing.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="renderall" class="tsd-anchor"></a>
+					<h3>render<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">render<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#renderall">renderAll</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L137">src/core/chart-group.ts:137</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Once all charts have been registered, this function should be called.
+									It will do the following in order:</p>
+									<ul>
+										<li>invoke async callback <a href="chartgroup.html#beforerenderall"><code>beforeRenderAll</code></a>,</li>
+										<li>invoke <a href="basemixin.html#render"><code>render</code></a> on each of the charts,</li>
+										<li>invoke callback <a href="chartgroup.html#renderlet"><code>renderlet</code></a>.</li>
+									</ul>
+								</div>
+								<p>Typically this will be called only once.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Intermediate Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deregister" class="tsd-anchor"></a>
+					<h3>deregister</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">deregister<span class="tsd-signature-symbol">(</span>chart<span class="tsd-signature-symbol">: </span><a href="../interfaces/iminimalchart.html" class="tsd-signature-type">IMinimalChart</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#deregister">deregister</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L110">src/core/chart-group.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>dc charts will deregister themselves.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>chart: <a href="../interfaces/iminimalchart.html" class="tsd-signature-type">IMinimalChart</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="has" class="tsd-anchor"></a>
+					<h3>has</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>chart<span class="tsd-signature-symbol">: </span><a href="../interfaces/iminimalchart.html" class="tsd-signature-type">IMinimalChart</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L92">src/core/chart-group.ts:92</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if the chart is registered with this chartGroup.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>chart: <a href="../interfaces/iminimalchart.html" class="tsd-signature-type">IMinimalChart</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="list" class="tsd-anchor"></a>
+					<h3>list</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IMinimalChart</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L83">src/core/chart-group.ts:83</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>List of charts in the group. It returns the internal storage without defensive cloning.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IMinimalChart</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="register" class="tsd-anchor"></a>
+					<h3>register</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>chart<span class="tsd-signature-symbol">: </span><a href="../interfaces/iminimalchart.html" class="tsd-signature-type">IMinimalChart</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ichartgroup.html">IChartGroup</a>.<a href="../interfaces/ichartgroup.html#register">register</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L101">src/core/chart-group.ts:101</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>dc charts will register themselves. Non dc charts will need to call this method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>chart: <a href="../interfaces/iminimalchart.html" class="tsd-signature-type">IMinimalChart</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Ninja Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clear" class="tsd-anchor"></a>
+					<h3>clear</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kum-deepak/dc.js/blob/3660d959/src/core/chart-group.ts#L124">src/core/chart-group.ts:124</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove all charts from the registry.
+									Should not be called directly - it may leave charts in inconsistent state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label pp-nav pp-group">
+						<span>Guides</span>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="../pages/Guides/dc-v5-upgrade-guide.html">dc@v5 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="../pages/Guides/dc-v4-upgrade-guide.html">dc@v4 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="../pages/Guides/dc-v3-upgrade-guide.html">dc@v3 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="chartgroup.html" class="tsd-kind-icon">Chart<wbr>Group</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="chartgroup.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="chartgroup.html#beforeredrawall" class="tsd-kind-icon">before<wbr>Redraw<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="chartgroup.html#beforerenderall" class="tsd-kind-icon">before<wbr>Render<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="chartgroup.html#filterstorage" class="tsd-kind-icon">filter<wbr>Storage</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="chartgroup.html#renderlet" class="tsd-kind-icon">renderlet</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#clear" class="tsd-kind-icon">clear</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#deregister" class="tsd-kind-icon">deregister</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#filterall" class="tsd-kind-icon">filter<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#has" class="tsd-kind-icon">has</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#list" class="tsd-kind-icon">list</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#redrawall" class="tsd-kind-icon">redraw<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#refocusall" class="tsd-kind-icon">refocus<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#register" class="tsd-kind-icon">register</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="chartgroup.html#renderall" class="tsd-kind-icon">render<wbr>All</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.json"><' + '/script>');</script>
+</body>
+</html>

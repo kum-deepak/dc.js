@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dc@v4 Migration Guide | dc</title>
+	<meta name="description" content="Documentation for dc">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../assets/css/main.css">
+	<link rel="stylesheet" href="../../assets/css/pages.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.json" data-base="../..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../../index.html" class="title">dc</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../../modules.html">Globals</a>
+				</li>
+				<li>
+					<a href="dc-v5-upgrade-guide.html">Guides</a>
+				</li>
+				<li>
+					<a href="dc-v4-upgrade-guide.html">dc@v4 Migration Guide</a>
+				</li>
+			</ul>
+			<h1>dc@v4 Migration Guide</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#dc-v4-upgrade-guide" id="dc-v4-upgrade-guide" style="color: inherit; text-decoration: none;">
+					<h1>dc v4 Upgrade Guide</h1>
+				</a>
+				<p>The underlying code has undergone heavy changes, but great care has been
+				taken to ensure API compatibility.</p>
+				<p>Typical usage of this library should see very little difference.
+					However sophisticated usage, including the ones that alter and extend
+				dc, are likely to need changes.</p>
+				<p>Please raise an issue on GitHub if you run into problems not covered here!</p>
+				<a href="#key-changes" id="key-changes" style="color: inherit; text-decoration: none;">
+					<h2>Key changes</h2>
+				</a>
+				<ul>
+					<li>The code base has been upgraded to ES6.</li>
+					<li>As an implication, any browser that does not natively support ES6 (specifically
+					Internet Explorer) is no longer supported. Use v3.x if you need legacy support.</li>
+					<li>The library is distributed as a UMD bundle that can be used from any environment.
+					It is friendly to bundlers like rollup and webpack.</li>
+					<li>If you are using dc.js as ES6 modules, you do not need to prefix <code>dc</code>
+					to classes and functions.</li>
+					<li>When using in the web-browser via the script tag, the entire library is exposed
+					within the <code>dc</code> namespace.</li>
+					<li><code>dc</code> no longer lists <code>crossfilter2</code> as npm dependency.
+						As a side effect <code>dc</code> no longer exports <code>dc.crossfilter</code>.
+					If your code relied on <code>dc.crossfilter</code>, please update your code to use <code>crossfilter</code> directly.</li>
+				</ul>
+				<a href="#steps-to-upgrade" id="steps-to-upgrade" style="color: inherit; text-decoration: none;">
+					<h2>Steps to upgrade</h2>
+				</a>
+				<ul>
+					<li><p>Packages for some variables/classes have changed:</p>
+						<ul>
+							<li><code>dc.dateFormat</code> &#10137; <code>dc.config.dateFormat</code></li>
+							<li><code>dc.disableTransitions</code> &#10137; <code>dc.config.disableTransitions</code></li>
+							<li><code>dc.errors.InvalidStateException</code> &#10137; <code>dc.InvalidStateException</code></li>
+							<li><code>dc.errors.BadArgumentException</code> &#10137; <code>dc.BadArgumentException</code></li>
+						</ul>
+					</li>
+					<li><p>Functions from <code>dc.round</code> have been removed.
+						Please change as follows:</p>
+						<ul>
+							<li><code>dc.round.floor</code> &#10137; <code>Math.floor</code></li>
+							<li><code>dc.round.round</code> &#10137; <code>Math.round</code></li>
+							<li><code>dc.round.ceil</code> &#10137; <code>Math.ceil</code></li>
+						</ul>
+					</li>
+					<li><p>The previous functions for instantiating charts are still supported.
+						However, it is recommended to use the <code>new</code> operator instead. For example:</p>
+						<ul>
+							<li><code>dc.pieChart(parent, chartGroup)</code> &#10137; <code>new dc.PieChart(parent, chartGroup)</code></li>
+						</ul>
+					</li>
+					<li><p>In dcv4, inside a <code>dc</code> chart functions expect <code>this</code> to be the chart
+							instance. However <code>d3</code> sets it to the d3 element.
+							This might cause failures in callbacks where a dc chart function
+						is passed as a callback. For example, the following will fail in dcv4:</p>
+					</li>
+				</ul>
+				<pre><code class="language-javascript"><span style="color: #001080">chart</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;renderlet&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">_chart</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">_chart</span><span style="color: #000000">.</span><span style="color: #795E26">selectAll</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;rect.bar&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;click&#039;</span><span style="color: #000000">, </span><span style="color: #001080">_chart</span><span style="color: #000000">.</span><span style="color: #001080">onClick</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>Change it to:</p>
+				<pre><code class="language-javascript"><span style="color: #001080">chart</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;renderlet&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000"> (</span><span style="color: #001080">_chart</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">_chart</span><span style="color: #000000">.</span><span style="color: #795E26">selectAll</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;rect.bar&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;click&#039;</span><span style="color: #000000">, </span><span style="color: #001080">d</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">_chart</span><span style="color: #000000">.</span><span style="color: #795E26">onClick</span><span style="color: #000000">(</span><span style="color: #001080">d</span><span style="color: #000000">));</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<ul>
+					<li><p>The mixins no longer have instantiation functions:</p>
+						<ul>
+							<li>the mixin classes must be instantiated with <code>new</code></li>
+							<li>instead of passing a chart <em>instance</em> to be initialized, new classes extend mixins</li>
+							<li>the Bubble, Cap, and Color mixins take a base mixin <em>class</em> to extend</li>
+							<li>the CoordinateGrid, Margin, and Stack mixins extend the mixins they were used with in v3</li>
+						</ul>
+						<p>Old synonyms for the mixins from v1.0 have been removed.</p>
+						<p>For example,</p>
+						<ul>
+							<li><code>var _chart = dc.bubbleMixin(dc.coordinateGridMixin({})</code> (or <code>dc.abstractBubbleChart</code>)<br>&#10137; <code>class ___ extends dc.BubbleMixin(dc.CoordinateGridMixin)</code></li>
+							<li><code>dc.baseMixin</code> (or <code>dc.baseChart</code>) &#10137; <code>new dc.BaseMixin</code></li>
+							<li><code>var _chart = dc.capMixin(dc.colorMixin(dc.baseMixin({})));</code> (or <code>dc.capped</code>, <code>dc.colorChart</code>))<br>&#10137; <code>class ___ extends dc.CapMixin(dc.ColorMixin(dc.BaseMixin))</code></li>
+							<li><code>var _chart = dc.coordinateGridMixin({})</code> (or <code>dc.coordinateGridChart</code>)<br>&#10137; <code>class ___ extends dc.CoordinateGridChart</code></li>
+							<li><code>var _chart = dc.colorMixin(dc.marginMixin(dc.baseMixin(_chart)))</code> (or <code>dc.marginable</code>)<br>&#10137; <code>class ___ extends dc.ColorMixin(dc.MarginMixin)</code></li>
+							<li><code>var _chart = dc.stackMixin(dc.coordinateGridMixin({}))</code> (or <code>dc.stackableChart</code>)<br>&#10137; <code>class ___ extends StackMixin</code></li>
+						</ul>
+						<p>See <a href="https://github.com/dc-js/dc.leaflet.js/commit/c086a04c1dbf879fca70195c0a2fdafbf191355c">this commit in dc.leaflet.js</a>
+						(v0.5.0) for an example of using ES5 closure &quot;classes&quot; with dc@4.</p>
+					</li>
+					<li><p><code>dc.override</code> has been removed.
+							It was used to override a method in an object (typically a chart).
+							You can either create a derived class extending the chart class,
+						or you can override specific methods on your instance of a chart, e.g.:</p>
+					</li>
+				</ul>
+				<pre><code class="language-javascript"><span style="color: #000000">        </span><span style="color: #008000">// Using inheritance</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">MyLineChart</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">dc</span><span style="color: #000000">.</span><span style="color: #267F99">LineChart</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #795E26">yAxisMin</span><span style="color: #000000"> () {</span>
+<span style="color: #000000">                </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ymin</span><span style="color: #000000"> = </span><span style="color: #0000FF">super</span><span style="color: #000000">.</span><span style="color: #795E26">yAxisMin</span><span style="color: #000000">();</span>
+<span style="color: #000000">                </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">ymin</span><span style="color: #000000"> &lt; </span><span style="color: #098658">0</span><span style="color: #000000">) </span><span style="color: #001080">ymin</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">;</span>
+<span style="color: #000000">                </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">ymin</span><span style="color: #000000">;</span>
+<span style="color: #000000">            }</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">chart01</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">MyLineChart</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#chart01&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">        </span><span style="color: #008000">// Or, using direct assignment</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">chart02</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">dc</span><span style="color: #000000">.</span><span style="color: #795E26">BarChart</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;#chart02&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">super_yAxisMin</span><span style="color: #000000"> = </span><span style="color: #001080">chart02</span><span style="color: #000000">.</span><span style="color: #001080">yAxisMin</span><span style="color: #000000">;</span>
+<span style="color: #000000">        </span><span style="color: #001080">chart02</span><span style="color: #000000">.</span><span style="color: #795E26">yAxisMin</span><span style="color: #000000"> = </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">            </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ymin</span><span style="color: #000000"> = </span><span style="color: #001080">super_yAxisMin</span><span style="color: #000000">.</span><span style="color: #795E26">call</span><span style="color: #000000">(</span><span style="color: #0000FF">this</span><span style="color: #000000">);</span>
+<span style="color: #000000">            </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">ymin</span><span style="color: #000000"> &lt; </span><span style="color: #098658">0</span><span style="color: #000000">) </span><span style="color: #001080">ymin</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">;</span>
+<span style="color: #000000">            </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">ymin</span><span style="color: #000000">;</span>
+<span style="color: #000000">        };</span>
+</code></pre>
+				<p>   Please see:
+					<a href="http://dc-js.github.io/dc.js/examples/focus-dynamic-interval.html">http://dc-js.github.io/dc.js/examples/focus-dynamic-interval.html</a>
+					and <a href="http://dc-js.github.io/dc.js/examples/stacked-bar.html">http://dc-js.github.io/dc.js/examples/stacked-bar.html</a>
+				for example.</p>
+				<ul>
+					<li><a href="https://bower.io/">bower</a> support is dropped from version 4.0. Please use version 3.* for
+					Bower support.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label pp-nav pp-group">
+						<span>Guides</span>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="dc-v5-upgrade-guide.html">dc@v5 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class="current pp-nav pp-page">
+						<a href="dc-v4-upgrade-guide.html">dc@v4 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="dc-v3-upgrade-guide.html">dc@v3 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class="label pp-nav pp-group">
+						<span>API</span>
+					</li>
+					<li class=" ">
+						<a href="../../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.json"><' + '/script>');</script>
+</body>
+</html>

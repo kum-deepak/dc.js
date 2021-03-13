@@ -1,0 +1,632 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dc</title>
+	<meta name="description" content="Documentation for dc">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">dc</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="modules.html">Globals</a>
+				</li>
+			</ul>
+			<h1>Project dc</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#dcjs" id="dcjs" style="color: inherit; text-decoration: none;">
+					<h1>dc.js</h1>
+				</a>
+				<p>Welcome to the dc.js documentation.</p>
+				<p>This library id developed using Typescript and may be used as ES6 modules or as a JS file (UMD) in your webpage.
+				Type definitions are included with the distribution.</p>
+				<p>When used as UMD in your webpage, the entire library is scoped under <code>dc</code> namespace.</p>
+				<p>When used as modules you will see the classes and functions as per your import
+				statements.</p>
+				<p>A class diagram is shown below - mixins are blue and chart classes are green.
+					Users if this library will usually be using the Chart classes.
+				The documentation includes all methods and properties supported by a chart including inherited ones.</p>
+				<div>
+					<span id="insert-svg-here"></span>
+				</div>
+				<script type="application/javascript">
+window.fetch("../img/class-hierarchy.svg").then(result => {
+    result.text().then(content => document.getElementById('insert-svg-here').outerHTML = content);
+});
+</script>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label pp-nav pp-group">
+						<span>Guides</span>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="pages/Guides/dc-v5-upgrade-guide.html">dc@v5 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="pages/Guides/dc-v4-upgrade-guide.html">dc@v4 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="pages/Guides/dc-v3-upgrade-guide.html">dc@v3 <wbr>Migration <wbr>Guide</a>
+					</li>
+					<li class="label pp-nav pp-group">
+						<span>API</span>
+					</li>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/abstractcolorhelper.html" class="tsd-kind-icon">Abstract<wbr>Color<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/badargumentexception.html" class="tsd-kind-icon">Bad<wbr>Argument<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/barchart.html" class="tsd-kind-icon">Bar<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/basemixin.html" class="tsd-kind-icon">Base<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/boxplot.html" class="tsd-kind-icon">Box<wbr>Plot</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/bubblechart.html" class="tsd-kind-icon">Bubble<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/bubbleoverlay.html" class="tsd-kind-icon">Bubble<wbr>Overlay</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cfdatacaphelper.html" class="tsd-kind-icon">CFData<wbr>Cap<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cffilterhandler.html" class="tsd-kind-icon">CFFilter<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cfmultiadapter.html" class="tsd-kind-icon">CFMulti<wbr>Adapter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cfsimpleadapter.html" class="tsd-kind-icon">CFSimple<wbr>Adapter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cboxmenu.html" class="tsd-kind-icon">Cbox<wbr>Menu</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/chartgroup.html" class="tsd-kind-icon">Chart<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/colorcalculator.html" class="tsd-kind-icon">Color<wbr>Calculator</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/colorscalehelper.html" class="tsd-kind-icon">Color<wbr>Scale<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/compositechart.html" class="tsd-kind-icon">Composite<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/config.html" class="tsd-kind-icon">Config</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/coordinategridmixin.html" class="tsd-kind-icon">Coordinate<wbr>Grid<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/datacount.html" class="tsd-kind-icon">Data<wbr>Count</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/datagrid.html" class="tsd-kind-icon">Data<wbr>Grid</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/datatable.html" class="tsd-kind-icon">Data<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/filterhandler.html" class="tsd-kind-icon">Filter<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/filterstorage.html" class="tsd-kind-icon">Filter<wbr>Storage</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/geochoroplethchart.html" class="tsd-kind-icon">Geo<wbr>Choropleth<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/heatmap.html" class="tsd-kind-icon">Heat<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/hierarchyfilter.html" class="tsd-kind-icon">Hierarchy<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/htmllegend.html" class="tsd-kind-icon">Html<wbr>Legend</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/invalidstateexception.html" class="tsd-kind-icon">Invalid<wbr>State<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/legend.html" class="tsd-kind-icon">Legend</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/linechart.html" class="tsd-kind-icon">Line<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/linearcolors.html" class="tsd-kind-icon">Linear<wbr>Colors</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/logger.html" class="tsd-kind-icon">Logger</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/marginmixin.html" class="tsd-kind-icon">Margin<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/numberdisplay.html" class="tsd-kind-icon">Number<wbr>Display</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/ordinalcolors.html" class="tsd-kind-icon">Ordinal<wbr>Colors</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/piechart.html" class="tsd-kind-icon">Pie<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/rangedfilter.html" class="tsd-kind-icon">Ranged<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/rangedtwodimensionalfilter.html" class="tsd-kind-icon">Ranged<wbr>Two<wbr>Dimensional<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/rowchart.html" class="tsd-kind-icon">Row<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/scatterplot.html" class="tsd-kind-icon">Scatter<wbr>Plot</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/selectmenu.html" class="tsd-kind-icon">Select<wbr>Menu</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/serieschart.html" class="tsd-kind-icon">Series<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/stackmixin.html" class="tsd-kind-icon">Stack<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/sunburstchart.html" class="tsd-kind-icon">Sunburst<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/textfilterwidget.html" class="tsd-kind-icon">Text<wbr>Filter<wbr>Widget</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/twodimensionalfilter.html" class="tsd-kind-icon">Two<wbr>Dimensional<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/cfgrouping.html" class="tsd-kind-icon">CFGrouping</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/comparefn.html" class="tsd-kind-icon">Compare<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/datacounthtmloptions.html" class="tsd-kind-icon">Data<wbr>CountHTMLOptions</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ibarchartconf.html" class="tsd-kind-icon">IBar<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ibasemixinconf.html" class="tsd-kind-icon">IBase<wbr>Mixin<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iboxplotconf.html" class="tsd-kind-icon">IBox<wbr>Plot<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ibubblemixinconf.html" class="tsd-kind-icon">IBubble<wbr>Mixin<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ibubbleoverlayconf.html" class="tsd-kind-icon">IBubble<wbr>Overlay<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icfdatacaphelperconf.html" class="tsd-kind-icon">ICFData<wbr>Cap<wbr>Helper<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icffilterhandlerconf.html" class="tsd-kind-icon">ICFFilter<wbr>Handler<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icfmultiadapterconf.html" class="tsd-kind-icon">ICFMulti<wbr>Adapter<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icfsimpleadapterconf.html" class="tsd-kind-icon">ICFSimple<wbr>Adapter<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icboxmenuconf.html" class="tsd-kind-icon">ICbox<wbr>Menu<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ichartgroup.html" class="tsd-kind-icon">IChart<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icolormixinconf.html" class="tsd-kind-icon">IColor<wbr>Mixin<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icompositechartconf.html" class="tsd-kind-icon">IComposite<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icoordinategridmixinconf.html" class="tsd-kind-icon">ICoordinate<wbr>Grid<wbr>Mixin<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idatacountconf.html" class="tsd-kind-icon">IData<wbr>Count<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idatagridconf.html" class="tsd-kind-icon">IData<wbr>Grid<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/idatatableconf.html" class="tsd-kind-icon">IData<wbr>Table<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ifilter.html" class="tsd-kind-icon">IFilter</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ifilterlistenerparams.html" class="tsd-kind-icon">IFilter<wbr>Listener<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ifilterstorage.html" class="tsd-kind-icon">IFilter<wbr>Storage</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/igeochoroplethchartconf.html" class="tsd-kind-icon">IGeo<wbr>Choropleth<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/igeojson.html" class="tsd-kind-icon">IGeo<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iheatmapconf.html" class="tsd-kind-icon">IHeat<wbr>Map<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/imarginmixinconf.html" class="tsd-kind-icon">IMargin<wbr>Mixin<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iminimalchart.html" class="tsd-kind-icon">IMinimal<wbr>Chart</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/inesterparams.html" class="tsd-kind-icon">INester<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/inumberdisplayconf.html" class="tsd-kind-icon">INumber<wbr>Display<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ipiechartconf.html" class="tsd-kind-icon">IPie<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/irowchartconf.html" class="tsd-kind-icon">IRow<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iscatterplotconf.html" class="tsd-kind-icon">IScatter<wbr>Plot<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iselectmenuconf.html" class="tsd-kind-icon">ISelect<wbr>Menu<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iserializeopts.html" class="tsd-kind-icon">ISerialize<wbr>Opts</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iserializedfilters.html" class="tsd-kind-icon">ISerialized<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iserieschartconf.html" class="tsd-kind-icon">ISeries<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/istackmixinconf.html" class="tsd-kind-icon">IStack<wbr>Mixin<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/isunburstchartconf.html" class="tsd-kind-icon">ISunburst<wbr>Chart<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/itextfilterwidgetconf.html" class="tsd-kind-icon">IText<wbr>Filter<wbr>Widget<wbr>Conf</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iunits.html" class="tsd-kind-icon">IUnits</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/layerspec.html" class="tsd-kind-icon">Layer<wbr>Spec</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/legenditem.html" class="tsd-kind-icon">Legend<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/minimalcfdimension.html" class="tsd-kind-icon">MinimalCFDimension</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/minimalcfgroup.html" class="tsd-kind-icon">MinimalCFGroup</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/minimalscalewithrange.html" class="tsd-kind-icon">Minimal<wbr>Scale<wbr>With<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/minimalxyscale.html" class="tsd-kind-icon">MinimalXYScale</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/parentoflegend.html" class="tsd-kind-icon">Parent<wbr>OfLegend</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ringsizespecs.html" class="tsd-kind-icon">Ring<wbr>Size<wbr>Specs</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#baseaccessor" class="tsd-kind-icon">Base<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#boxwidthfn" class="tsd-kind-icon">Box<wbr>Width<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#bubblepoint" class="tsd-kind-icon">Bubble<wbr>Point</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#chartgrouptype" class="tsd-kind-icon">Chart<wbr>Group<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#chartparenttype" class="tsd-kind-icon">Chart<wbr>Parent<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#coloraccessor" class="tsd-kind-icon">Color<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#colorslist" class="tsd-kind-icon">Colors<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="modules.html#constructor" class="tsd-kind-icon">Constructor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#dcbrushselection" class="tsd-kind-icon">DCBrush<wbr>Selection</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#dcprimitive" class="tsd-kind-icon">DCPrimitive</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#datatablecolumnspec" class="tsd-kind-icon">Data<wbr>Table<wbr>Column<wbr>Spec</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#groupingfn" class="tsd-kind-icon">Grouping<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#heatmapclickhandler" class="tsd-kind-icon">Heat<wbr>Map<wbr>Click<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#keyaccessor" class="tsd-kind-icon">Key<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#labelaccessor" class="tsd-kind-icon">Label<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#legendtextaccessor" class="tsd-kind-icon">Legend<wbr>Text<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#linechartfunction" class="tsd-kind-icon">Line<wbr>Chart<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#margins" class="tsd-kind-icon">Margins</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#minimalcolorscale" class="tsd-kind-icon">Minimal<wbr>Color<wbr>Scale</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#minimalradiusscale" class="tsd-kind-icon">Minimal<wbr>Radius<wbr>Scale</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#numberformatfn" class="tsd-kind-icon">Number<wbr>Format<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#rvalueaccessor" class="tsd-kind-icon">RValue<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#roundfn" class="tsd-kind-icon">Round<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#svggelementselection" class="tsd-kind-icon">SVGGElement<wbr>Selection</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#symboltypegenerator" class="tsd-kind-icon">Symbol<wbr>Type<wbr>Generator</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#titleaccessor" class="tsd-kind-icon">Title<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#valueaccessor" class="tsd-kind-icon">Value<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#unitsinteger" class="tsd-kind-icon">Units<wbr>Integer</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#unitsordinal" class="tsd-kind-icon">Units<wbr>Ordinal</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#chartregistry" class="tsd-kind-icon">chart<wbr>Registry</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#config" class="tsd-kind-icon">config</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#constants" class="tsd-kind-icon">constants</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#events" class="tsd-kind-icon">events</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#logger" class="tsd-kind-icon">logger</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#bubblemixin" class="tsd-kind-icon">Bubble<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#colormixin" class="tsd-kind-icon">Color<wbr>Mixin</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#unitwithprecision" class="tsd-kind-icon">Unit<wbr>With<wbr>Precision</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#adapthandler" class="tsd-kind-icon">adapt<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#add" class="tsd-kind-icon">add</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#aftertransition" class="tsd-kind-icon">after<wbr>Transition</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#allchildren" class="tsd-kind-icon">all<wbr>Children</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#appendorselect" class="tsd-kind-icon">append<wbr>OrSelect</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#arraysequal" class="tsd-kind-icon">arrays<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#arraysidentical" class="tsd-kind-icon">arrays<wbr>Identical</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#clamp" class="tsd-kind-icon">clamp</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#compatnesthelper" class="tsd-kind-icon">compat<wbr>Nest<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#getancestors" class="tsd-kind-icon">get<wbr>Ancestors</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#instanceofchart" class="tsd-kind-icon">instance<wbr>OfChart</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isfloat" class="tsd-kind-icon">is<wbr>Float</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isinteger" class="tsd-kind-icon">is<wbr>Integer</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isnegligible" class="tsd-kind-icon">is<wbr>Negligible</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#isnumber" class="tsd-kind-icon">is<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#nametoid" class="tsd-kind-icon">name<wbr>ToId</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#optionaltransition" class="tsd-kind-icon">optional<wbr>Transition</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#pluck2" class="tsd-kind-icon">pluck2</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#printfilter" class="tsd-kind-icon">print<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#printfilters" class="tsd-kind-icon">print<wbr>Filters</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#printsinglevalue" class="tsd-kind-icon">print<wbr>Single<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#safenumber" class="tsd-kind-icon">safe<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#sortby" class="tsd-kind-icon">sort<wbr>By</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#subtract" class="tsd-kind-icon">subtract</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tohierarchy" class="tsd-kind-icon">to<wbr>Hierarchy</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#transition" class="tsd-kind-icon">transition</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#uniqueid" class="tsd-kind-icon">unique<wbr>Id</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.json"><' + '/script>');</script>
+</body>
+</html>
